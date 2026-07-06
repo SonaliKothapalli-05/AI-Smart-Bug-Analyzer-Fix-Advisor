@@ -1,0 +1,92 @@
+[
+  {
+    "chunk_id": "MOZ-1001-0",
+    "bug_id": "MOZ-1001",
+    "text": "Firefox crashes when opening PDF preview Opening a PDF in a private browsing window intermittently crashes after the preview toolbar loads. TypeError: this.viewer is null at PdfViewer.render viewer.js:214 PDF Viewer critical P1 FIXED RESOLVED",
+    "metadata": {
+      "bug_id": "MOZ-1001",
+      "title": "Firefox crashes when opening PDF preview",
+      "component": "PDF Viewer",
+      "severity": "critical",
+      "priority": "P1",
+      "status": "RESOLVED",
+      "resolution": "FIXED",
+      "chunk_index": 0
+    }
+  },
+  {
+    "chunk_id": "APACHE-2204-0",
+    "bug_id": "APACHE-2204",
+    "text": "HTTP server returns 500 after malformed header Requests containing an oversized folded header trigger a server error instead of a controlled 400 response. java.lang.IllegalArgumentException: invalid header continuation at HeaderParser.parse(HeaderParser.java:87) HTTP Core major P2 FIXED CLOSED",
+    "metadata": {
+      "bug_id": "APACHE-2204",
+      "title": "HTTP server returns 500 after malformed header",
+      "component": "HTTP Core",
+      "severity": "major",
+      "priority": "P2",
+      "status": "CLOSED",
+      "resolution": "FIXED",
+      "chunk_index": 0
+    }
+  },
+  {
+    "chunk_id": "ECLIPSE-3112-0",
+    "bug_id": "ECLIPSE-3112",
+    "text": "IDE freezes during Java autocomplete Content assist hangs when a workspace contains cyclic project references and annotation processing is enabled. Thread dump: org.eclipse.jdt.internal.codeassist.CompletionEngine.complete waits on IndexManager JDT major P2 WORKSFORME CLOSED",
+    "metadata": {
+      "bug_id": "ECLIPSE-3112",
+      "title": "IDE freezes during Java autocomplete",
+      "component": "JDT",
+      "severity": "major",
+      "priority": "P2",
+      "status": "CLOSED",
+      "resolution": "WORKSFORME",
+      "chunk_index": 0
+    }
+  },
+  {
+    "chunk_id": "MOZ-1020-0",
+    "bug_id": "MOZ-1020",
+    "text": "Login form loses focus after password autofill Password manager fills saved credentials but moves focus away from the submit button on slow pages. Password Manager minor P3 DUPLICATE RESOLVED",
+    "metadata": {
+      "bug_id": "MOZ-1020",
+      "title": "Login form loses focus after password autofill",
+      "component": "Password Manager",
+      "severity": "minor",
+      "priority": "P3",
+      "status": "RESOLVED",
+      "resolution": "DUPLICATE",
+      "chunk_index": 0
+    }
+  },
+  {
+    "chunk_id": "APACHE-2251-0",
+    "bug_id": "APACHE-2251",
+    "text": "Null pointer in module reload command Reloading modules while a virtual host is disabled causes a null pointer exception and leaves the admin command incomplete. NullPointerException at ModuleRegistry.reload(ModuleRegistry.java:142) Admin CLI critical P1 FIXED RESOLVED",
+    "metadata": {
+      "bug_id": "APACHE-2251",
+      "title": "Null pointer in module reload command",
+      "component": "Admin CLI",
+      "severity": "critical",
+      "priority": "P1",
+      "status": "RESOLVED",
+      "resolution": "FIXED",
+      "chunk_index": 0
+    }
+  },
+  {
+    "chunk_id": "ECLIPSE-3199-0",
+    "bug_id": "ECLIPSE-3199",
+    "text": "Dark theme renders unreadable error marker text Error marker labels use a low-contrast red foreground on dark theme backgrounds after the latest theme update. UI normal P3 UNRESOLVED OPEN",
+    "metadata": {
+      "bug_id": "ECLIPSE-3199",
+      "title": "Dark theme renders unreadable error marker text",
+      "component": "UI",
+      "severity": "normal",
+      "priority": "P3",
+      "status": "OPEN",
+      "resolution": "UNRESOLVED",
+      "chunk_index": 0
+    }
+  }
+]

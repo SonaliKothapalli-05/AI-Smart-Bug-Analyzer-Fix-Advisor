@@ -1,0 +1,68 @@
+[
+  {
+    "bug_id": "MOZ-1001",
+    "title": "Firefox crashes when opening PDF preview",
+    "description": "Opening a PDF in a private browsing window intermittently crashes after the preview toolbar loads.",
+    "stack_trace": "TypeError: this.viewer is null at PdfViewer.render viewer.js:214",
+    "severity": "critical",
+    "priority": "P1",
+    "component": "PDF Viewer",
+    "resolution": "FIXED",
+    "status": "RESOLVED"
+  },
+  {
+    "bug_id": "APACHE-2204",
+    "title": "HTTP server returns 500 after malformed header",
+    "description": "Requests containing an oversized folded header trigger a server error instead of a controlled 400 response.",
+    "stack_trace": "java.lang.IllegalArgumentException: invalid header continuation at HeaderParser.parse(HeaderParser.java:87)",
+    "severity": "major",
+    "priority": "P2",
+    "component": "HTTP Core",
+    "resolution": "FIXED",
+    "status": "CLOSED"
+  },
+  {
+    "bug_id": "ECLIPSE-3112",
+    "title": "IDE freezes during Java autocomplete",
+    "description": "Content assist hangs when a workspace contains cyclic project references and annotation processing is enabled.",
+    "stack_trace": "Thread dump: org.eclipse.jdt.internal.codeassist.CompletionEngine.complete waits on IndexManager",
+    "severity": "major",
+    "priority": "P2",
+    "component": "JDT",
+    "resolution": "WORKSFORME",
+    "status": "CLOSED"
+  },
+  {
+    "bug_id": "MOZ-1020",
+    "title": "Login form loses focus after password autofill",
+    "description": "Password manager fills saved credentials but moves focus away from the submit button on slow pages.",
+    "stack_trace": "",
+    "severity": "minor",
+    "priority": "P3",
+    "component": "Password Manager",
+    "resolution": "DUPLICATE",
+    "status": "RESOLVED"
+  },
+  {
+    "bug_id": "APACHE-2251",
+    "title": "Null pointer in module reload command",
+    "description": "Reloading modules while a virtual host is disabled causes a null pointer exception and leaves the admin command incomplete.",
+    "stack_trace": "NullPointerException at ModuleRegistry.reload(ModuleRegistry.java:142)",
+    "severity": "critical",
+    "priority": "P1",
+    "component": "Admin CLI",
+    "resolution": "FIXED",
+    "status": "RESOLVED"
+  },
+  {
+    "bug_id": "ECLIPSE-3199",
+    "title": "Dark theme renders unreadable error marker text",
+    "description": "Error marker labels use a low-contrast red foreground on dark theme backgrounds after the latest theme update.",
+    "stack_trace": "",
+    "severity": "normal",
+    "priority": "P3",
+    "component": "UI",
+    "resolution": "UNRESOLVED",
+    "status": "OPEN"
+  }
+]

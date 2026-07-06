@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Smart Bug Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <div class="editor-pane">
+          <header>
+            <p class="eyebrow">Milestone 1</p>
+            <h1>AI Smart Bug Analyzer</h1>
+          </header>
+
+          <form id="bug-form">
+            <label for="report_text">Bug report</label>
+            <textarea id="report_text" name="report_text" placeholder="Paste title, description, reproduction steps, stack trace, and logs..."></textarea>
+
+            <div class="upload-grid">
+              <label>
+                Bug file
+                <input type="file" name="bug_file" accept=".txt,.log,.md,.csv,.json" />
+              </label>
+              <label>
+                Stack trace
+                <input type="file" name="stack_trace_file" accept=".txt,.log" />
+              </label>
+              <label>
+                Error log
+                <input type="file" name="log_file" accept=".txt,.log" />
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <label class="top-k">
+                Top K
+                <input type="number" name="top_k" value="5" min="1" max="10" />
+              </label>
+              <button type="submit">Find Similar Bugs</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="results-pane">
+          <div class="results-header">
+            <h2>Similar Bugs</h2>
+            <span id="status">Ready</span>
+          </div>
+          <div id="results" class="results"></div>
+        </aside>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
