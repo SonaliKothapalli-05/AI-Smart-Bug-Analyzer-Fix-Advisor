@@ -1,8 +1,6 @@
 # AI-Smart-Bug-Analyzer-Fix-Advisor
 AI-powered bug analysis system that uses RAG, semantic search, and LLMs to identify root causes and recommend accurate fixes. It helps developers resolve software issues faster by retrieving similar historical bugs and providing intelligent repair suggestions.
-# AI Smart Bug Analyzer & Fix Advisor
 
-Milestone 1 builds the foundation for an AI-based bug analysis system. The app accepts bug reports, converts them into embeddings, stores historical defects in a searchable knowledge base, and retrieves similar bugs through an initial RAG pipeline.
 
 ## Features
 
