@@ -1,0 +1,8 @@
+bug_id,title,description,stack_trace,severity,priority,component,resolution,status
+MOZ-1001,Firefox crashes when opening PDF preview,Opening a PDF in a private browsing window intermittently crashes after the preview toolbar loads.,TypeError: this.viewer is null at PdfViewer.render viewer.js:214,critical,P1,PDF Viewer,FIXED,RESOLVED
+APACHE-2204,HTTP server returns 500 after malformed header,Requests containing an oversized folded header trigger a server error instead of a controlled 400 response.,java.lang.IllegalArgumentException: invalid header continuation at HeaderParser.parse(HeaderParser.java:87),major,P2,HTTP Core,FIXED,CLOSED
+ECLIPSE-3112,IDE freezes during Java autocomplete,Content assist hangs when a workspace contains cyclic project references and annotation processing is enabled.,Thread dump: org.eclipse.jdt.internal.codeassist.CompletionEngine.complete waits on IndexManager,major,P2,JDT,WORKSFORME,CLOSED
+MOZ-1020,Login form loses focus after password autofill,Password manager fills saved credentials but moves focus away from the submit button on slow pages.,,minor,P3,Password Manager,DUPLICATE,RESOLVED
+APACHE-2251,Null pointer in module reload command,Reloading modules while a virtual host is disabled causes a null pointer exception and leaves the admin command incomplete.,NullPointerException at ModuleRegistry.reload(ModuleRegistry.java:142),critical,P1,Admin CLI,FIXED,RESOLVED
+ECLIPSE-3199,Dark theme renders unreadable error marker text,Error marker labels use a low-contrast red foreground on dark theme backgrounds after the latest theme update.,,normal,P3,UI,UNRESOLVED,OPEN
+

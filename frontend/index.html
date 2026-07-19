@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Smart Bug Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <span class="brand-mark">AI</span>
+          <strong>Smart Bug Analyzer</strong>
+        </div>
+      </header>
+
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Defect Intelligence Workspace</p>
+          <h1>AI Smart Bug Analyzer &amp; Fix Advisor</h1>
+          <p class="summary">
+            Search previous defects using the same evidence engineers use during triage:
+            issue descriptions, stack traces, logs, components, severity, and resolution history.
+          </p>
+        </div>
+        <div class="pipeline-card" aria-label="Retrieval pipeline">
+          <span class="card-label">Current index</span>
+          <strong>500 historical bug reports indexed</strong>
+          <p>Mozilla, Apache, and Eclipse-style records with title, component, severity, status, and stack evidence.</p>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="System signals">
+        <div>
+          <span>Embedding model</span>
+          <strong>all-MiniLM-L6-v2</strong>
+        </div>
+        <div>
+          <span>Vector store</span>
+          <strong>ChromaDB with JSON fallback</strong>
+        </div>
+        <div>
+          <span>Search mode</span>
+          <strong>Semantic similarity</strong>
+        </div>
+        <div>
+          <span>Response</span>
+          <strong>Top-K related defects</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="editor-pane">
+          <header class="pane-header">
+            <div>
+              <p class="eyebrow">New Defect Intake</p>
+              <h2>Describe the failure</h2>
+            </div>
+            <button class="sample-button" type="button" id="load-sample">Load Sample Input</button>
+          </header>
+
+          <form id="bug-form">
+            <label for="report_text">Report evidence</label>
+            <textarea id="report_text" name="report_text" placeholder="Example: title, affected module, environment, steps to reproduce, expected result, actual result, stack trace, and error logs..."></textarea>
+
+            <div class="upload-grid">
+              <label>
+                Issue export
+                <input type="file" name="bug_file" accept=".txt,.log,.md,.csv,.json" />
+              </label>
+              <label>
+                Stack trace
+                <input type="file" name="stack_trace_file" accept=".txt,.log" />
+              </label>
+              <label>
+                Error log
+                <input type="file" name="log_file" accept=".txt,.log" />
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <label class="top-k">
+                Top K
+                <input type="number" name="top_k" value="5" min="1" max="10" />
+              </label>
+              <button type="submit">Find Similar Bugs</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="results-pane">
+
+  <div class="results-header">
+    <div>
+        <p class="eyebrow">AI Analysis</p>
+        <h2>Bug Analysis</h2>
+    </div>
+    <span id="status">Ready</span>
+    <button id="download-report" class="sample-button">
+    📄 Download Report
+</button>
+</div>
+
+<!-- TRIAGE PANEL -->
+<div id="triage-card" class="triage-card" style="display:none;">
+    <h3>🧠 Triage Analysis</h3>
+
+    <div class="triage-grid">
+        <div>
+            <strong>Severity</strong>
+            <p id="severity"></p>
+        </div>
+
+        <div>
+            <strong>Priority</strong>
+            <p id="priority"></p>
+        </div>
+
+        <div>
+            <strong>Component</strong>
+            <p id="component"></p>
+        </div>
+
+        <div>
+            <strong>Confidence</strong>
+            <p id="confidence"></p>
+        </div>
+    </div>
+
+    <div class="reason-box">
+        <strong>Reasoning</strong>
+        <p id="reasoning"></p>
+    </div>
+</div>
+
+<!-- LOG ANALYSIS -->
+<div id="log-card" class="triage-card" style="display:none; margin-top:20px;">
+
+    <h3>📄 Log Analysis</h3>
+
+    <div class="triage-grid">
+
+        <div>
+            <strong>Exception Type</strong>
+            <p id="exception_type"></p>
+        </div>
+
+        <div>
+            <strong>Failure Point</strong>
+            <p id="failure_point"></p>
+        </div>
+
+        <div>
+            <strong>Affected Code Path</strong>
+            <p id="affected_code_path"></p>
+        </div>
+
+        <div>
+            <strong>Confidence</strong>
+            <p id="log_confidence"></p>
+        </div>
+
+    </div>
+
+    <div class="reason-box">
+        <strong>Reasoning</strong>
+        <p id="log_reasoning"></p>
+    </div>
+
+</div>
+
+<h2 style="margin-top:25px;">Related Defects</h2>
+
+<!-- Retrieval Summary -->
+<div id="summary-card" class="summary-card" style="display:none;">
+    <h3>📊 Retrieval Summary</h3>
+    <p id="summary-text"></p>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div id="loader" class="loader" style="display:none;">
+    🔄 Searching historical bug database...
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="results"></div>
+
+</aside>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

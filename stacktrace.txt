@@ -1,0 +1,5 @@
+java.lang.NullPointerException
+
+at com.project.auth.LoginService.authenticate(LoginService.java:82)
+
+at com.project.auth.LoginController.login(LoginController.java:45)
